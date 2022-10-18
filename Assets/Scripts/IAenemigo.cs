@@ -18,6 +18,10 @@ public class IAenemigo : MonoBehaviour
     //generador ruido
     GameObject ruido;
 
+    //para acceder a mi script de colisiones
+    public Colisiones script;
+
+
     void Start()
     {
         //pidiendo los componentes
@@ -38,7 +42,12 @@ public class IAenemigo : MonoBehaviour
         //ahora tendremos un if, en el cual el persigue con mayor prioridad
         //los generadores de ruido
 
-        try { ruido = GameObject.FindWithTag("generadorRuido"); enemy.SetDestination(ruido.transform.position); }
+        try { ruido = GameObject.FindWithTag("generadorRuido");
+            if(script.dist < 1000) { 
+                enemy.SetDestination(ruido.transform.position); 
+            }
+            
+        }
         catch (Exception e) { enemy.SetDestination(player.transform.position); }
 
 
