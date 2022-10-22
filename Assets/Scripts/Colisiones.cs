@@ -42,6 +42,7 @@ public class Colisiones : MonoBehaviour
         //generadorActivo.gameObject.tag="nulo";
     }
 
+
     void DetectarDistancia()
     {
         dist = Vector3.Distance(enemigo.transform.position, generadorActivo.transform.position);

@@ -43,9 +43,9 @@ public class IAenemigo : MonoBehaviour
         //los generadores de ruido
 
         try { ruido = GameObject.FindWithTag("generadorRuido");
-            if(script.dist < 1000) { 
+            //if(script.dist < 1000) { 
                 enemy.SetDestination(ruido.transform.position); 
-            }
+            //}
             
         }
         catch (Exception e) { enemy.SetDestination(player.transform.position); }
